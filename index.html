@@ -1073,6 +1073,8 @@ td.md-qr-cell { text-align: center; }
 .mdc-headchip .md-pill { font-size: 12px; padding: 2px 10px; white-space: nowrap; }
 .mdc-chipline { display: inline-flex; align-items: center; gap: 6px; }
 .mdc-chipnote { font-size: 14px; font-weight: 600; color: var(--ink); }
+/* "Take a photo of the QR code" button removed – Upload photo (bottom bar) is used instead */
+#sc-photo-btn { display: none !important; }
 </style>
 
 </head>
@@ -3025,7 +3027,7 @@ window.KP_STANDALONE = true;
     } else if (d.kp === 'fail') {
       scanTab = null;
       show('scan'); prepScanPage();
-      setScanMsg('The live camera isn\'t available on this phone. Take a photo of the QR code.');
+      setScanMsg('The live camera isn\'t available on this phone. Upload a photo of the QR code.');
     } else if (d.kp === 'cancel') {
       scanTab = null;
     }
@@ -3109,10 +3111,10 @@ window.KP_STANDALONE = true;
   function prepScanPage() {
     stopCamera();
     clear($('sc-result')); $('sc-result').hidden = true;
-    $('sc-again').hidden = true; $('sc-upload').hidden = true;
+    $('sc-again').hidden = true; $('sc-upload').hidden = false;      // a photo from the gallery
     $('sc-scan').hidden = false;
     $('sc-view').hidden = true;
-    $('sc-photo-btn').hidden = false;
+    $('sc-photo-btn').hidden = true;                                  // "Take a photo" button removed
     $('sc-photo-btn').classList.remove('ghost-alt');
     scan.busy = false;
   }
@@ -3120,7 +3122,7 @@ window.KP_STANDALONE = true;
   function openScan(directToken) {
     show('scan');
     clear($('sc-result')); $('sc-result').hidden = true;
-    if (!directToken && liveCameraBlocked()) { prepScanPage(); setScanMsg('Take a photo of the QR code.'); return; }
+    if (!directToken && liveCameraBlocked()) { prepScanPage(); setScanMsg('Upload a photo of the QR code.'); return; }
     $('sc-again').hidden = true; $('sc-upload').hidden = true;
     $('sc-scan').hidden = false;
     if (directToken) { $('sc-scan').hidden = true; return showBookingCheckIn(directToken); }
@@ -3147,19 +3149,17 @@ window.KP_STANDALONE = true;
       v.srcObject = stream;
       return v.play().then(function () {
         setScanMsg('Point the camera at the QR code.');
-        $('sc-photo-btn').hidden = false;                 // still offered as a backup
-        $('sc-photo-btn').classList.add('ghost-alt');
+        $('sc-photo-btn').hidden = true;
         $('sc-upload').hidden = false;                    // QR from a photo in the gallery
         scanLoop();
       });
     }).catch(function (e) {
       // "Permissions policy violation: camera is not allowed", no camera, or permission denied
       if (/load/i.test(e && e.message || '')) { setScanMsg(e.message); }
-      else { setScanMsg('Take a photo of the QR code.'); rememberPhotoMode(); }   // next time: phone camera at once
+      else { setScanMsg('Upload a photo of the QR code.'); rememberPhotoMode(); }   // next time: phone camera at once
       stopCamera();
       $('sc-view').hidden = true;
-      $('sc-photo-btn').hidden = false;
-      $('sc-photo-btn').classList.remove('ghost-alt');
+      $('sc-photo-btn').hidden = true;
       $('sc-upload').hidden = false;
     });
   }
@@ -3240,7 +3240,7 @@ window.KP_STANDALONE = true;
     var ctok = classTokenFromQr(text), tok = ctok ? '' : tokenFromQr(text);
     if (!ctok && !tok) {
       setScanMsg('This QR code is not a Keryx Pilates QR code.');
-      $('sc-photo-btn').hidden = hasLiveScanner();   // Scan again / Upload photo below instead
+      $('sc-photo-btn').hidden = true;               // Scan again / Upload photo below instead
       $('sc-again').hidden = false; $('sc-upload').hidden = false;
       return;
     }
