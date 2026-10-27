@@ -1238,7 +1238,7 @@ td.md-qr-cell { text-align: center; }
       <div class="card scan-card" id="sc-scan">
         <!-- live camera (when the browser allows it) -->
         <div class="scan-view" id="sc-view" hidden>
-          <video id="sc-video" playsinline muted></video>
+          <video id="sc-video" playsinline muted autoplay></video>
           <div class="scan-frame" aria-hidden="true"></div>
         </div>
         <p class="scan-msg" id="sc-msg">Starting the camera…</p>
@@ -1325,7 +1325,7 @@ td.md-qr-cell { text-align: center; }
 <script>
 /* ===== GitHub Pages version: connection to the Apps Script back end =====
    Paste the web app's /exec link below (Apps Script → Deploy → Manage deployments → Web app URL). */
-var KP_API_URL = 'https://script.google.com/macros/s/AKfycbw1t46SLv7l99Onbl8K_Q2c8USUiFPqxaGfXJyjAiTFWiarPvqp1JKild6R5Pv2VIBM/exec';
+var KP_API_URL = 'https://script.google.com/macros/s/AKfycbxZqnmFgsB3IaHqwAbJlovsCH1zXitzfKBCqJuauKg/exec';
 window.KP_STANDALONE = true;
 (function () {
   // deep links work here too: ?action=complete&t=… (Booking QR) / ?action=class&c=… (Class QR)
@@ -3141,13 +3141,15 @@ window.KP_STANDALONE = true;
       if (state.page !== 'scan') { stream.getTracks().forEach(function (t) { t.stop(); }); return; }
       scan.stream = stream;
       var v = $('sc-video');
+      // iPhone shows a black picture if the video is hidden while it starts – show the box first
+      $('sc-view').hidden = false;
+      v.setAttribute('playsinline', ''); v.setAttribute('autoplay', ''); v.muted = true;
       v.srcObject = stream;
-      v.setAttribute('playsinline', ''); v.muted = true;
       return v.play().then(function () {
-        $('sc-view').hidden = false;
-        setScanMsg('Point the camera at the booking QR code.');
+        setScanMsg('Point the camera at the QR code.');
         $('sc-photo-btn').hidden = false;                 // still offered as a backup
         $('sc-photo-btn').classList.add('ghost-alt');
+        $('sc-upload').hidden = false;                    // QR from a photo in the gallery
         scanLoop();
       });
     }).catch(function (e) {
@@ -3158,6 +3160,7 @@ window.KP_STANDALONE = true;
       $('sc-view').hidden = true;
       $('sc-photo-btn').hidden = false;
       $('sc-photo-btn').classList.remove('ghost-alt');
+      $('sc-upload').hidden = false;
     });
   }
 
