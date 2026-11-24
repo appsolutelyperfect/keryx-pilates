@@ -1,5 +1,5 @@
-<!-- Keryx Pilates – GitHub Pages version (generated from Index.html + Styles.html + Scripts.html, v3.4).
-     Only KP_API_URL near the bottom needs your Apps Script /exec link. -->
+<!-- Keryx Pilates – GitHub Pages version (generated from Index.html + Styles.html + Scripts.html, v3.5).
+     KP_API_URL near the bottom holds your Apps Script /exec link. -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,10 +8,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
   <title>Keryx Pilates</title>
   <meta name="theme-color" content="#F5F1EB">
+  <link rel="icon" type="image/png" href="keryx-icon.png">
+  <link rel="apple-touch-icon" href="keryx-icon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0">
   <style>
 /* =========================================================================
@@ -20,15 +22,16 @@
 :root {
   --bg: #F5F1EB;
   --surface: #FFFFFF;
-  --surface-2: #FAF7F2;
-  --ink: #2D2A26;
-  --muted: #7A736A;
-  --line: #E6DFD5;
+  --surface-2: #FAF8F4;
+  --ink: #122F4C;        /* Regimental Blue – brand palette */
+  --muted: #66717D;
+  --line: #E2DDD2;
+  --beige: #D9D5C9;      /* Soft Warm Beige – brand palette */
 
-  --accent: #5E8C7A;
-  --accent-dark: #4A7262;
+  --accent: #122F4C;
+  --accent-dark: #0C2238;
   --accent-ink: #FFFFFF;
-  --accent-soft: #E3EEE9;
+  --accent-soft: #ECE8DF;
 
   /* same colours as the sheet's Booking Status dropdown */
   --booked-bg: #11734B;  --booked-ink: #D4EDBC;
@@ -40,8 +43,8 @@
 
   --radius: 16px;
   --radius-sm: 10px;
-  --shadow: 0 1px 2px rgba(45,42,38,.06), 0 8px 24px rgba(45,42,38,.06);
-  --font: 'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --shadow: 0 1px 2px rgba(18,47,76,.06), 0 8px 24px rgba(18,47,76,.07);
+  --font: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --serif: 'Cormorant Garamond', Georgia, serif;
   --hour: 84px;   /* height of one hour in week/day views (fits name, time, service, trainer) */
 }
@@ -862,7 +865,7 @@ select.md-in { padding-right: 32px !important; }
 .qr-img img { width: 176px; height: 176px; image-rendering: pixelated; }
 .qr-cap { margin: 0; font-size: 13px; color: var(--muted); text-align: center; max-width: 300px; }
 .bk-id { font-size: 12.5px; color: var(--muted); letter-spacing: .3px; }
-.qr-btn { min-height: 32px; padding: 0 12px; gap: 4px; font-size: 13px; background: var(--accent-soft); color: var(--accent-dark); border-color: #C9DDD4; margin-top: 4px; }
+.qr-btn { min-height: 32px; padding: 0 12px; gap: 4px; font-size: 13px; background: var(--accent-soft); color: var(--accent-dark); border-color: #D9D5C9; margin-top: 4px; }
 .qr-btn .ms { font-size: 18px; }
 
 .scan-card { text-align: center; }
@@ -917,7 +920,7 @@ select.md-in { padding-right: 32px !important; }
 .fab-lbl { background: var(--surface); color: var(--ink); font-size: 14px; font-weight: 600; padding: 6px 12px; border-radius: 999px;
   box-shadow: 0 2px 10px rgba(0,0,0,.12); white-space: nowrap; }
 .fab-mini { width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center;
-  background: var(--surface); color: var(--accent-dark); border: 1px solid #C9DDD4; box-shadow: 0 4px 12px rgba(46,84,70,.25); }
+  background: var(--surface); color: var(--accent-dark); border: 1px solid #D9D5C9; box-shadow: 0 4px 12px rgba(46,84,70,.25); }
 .fab-mini .ms { font-size: 24px; }
 .fab-item:active .fab-mini { transform: scale(.94); }
 .fab-wrap.open .scan-fab { background: var(--accent-dark); }
@@ -974,7 +977,7 @@ select.md-in { padding-right: 32px !important; }
 .ci-hint { text-align: center; margin: 10px 0 0; }
 /* Class QR button (Check/Cancel page head) and pop-up */
 .page-head .cq-btn { margin-left: auto; min-height: 36px; padding: 0 12px; gap: 6px; font-size: 13px; white-space: nowrap;
-                     background: var(--accent-soft); color: var(--accent-dark); border-color: #C9DDD4; }
+                     background: var(--accent-soft); color: var(--accent-dark); border-color: #D9D5C9; }
 .page-head .cq-btn .ms { font-size: 18px; }
 .page-head .cq-btn[hidden] { display: none; }
 .cq-body { text-align: center; }
@@ -982,7 +985,7 @@ select.md-in { padding-right: 32px !important; }
 .cq-body .qr-box { margin: 0 auto; }
 /* Booking details: small icon buttons next to a value (Class QR, admin pencil) */
 .kv-with-btn { display: inline-flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-.kv-icon-btn { width: 30px; height: 30px; border-radius: 50%; border: 1px solid #C9DDD4; background: var(--accent-soft); color: var(--accent-dark);
+.kv-icon-btn { width: 30px; height: 30px; border-radius: 50%; border: 1px solid #D9D5C9; background: var(--accent-soft); color: var(--accent-dark);
                display: inline-grid; place-items: center; padding: 0; cursor: pointer; flex: 0 0 auto; }
 .kv-icon-btn .ms { font-size: 18px; }
 /* 4 status tabs: own full-width line on phones, "Select all" below on the right */
@@ -1023,8 +1026,8 @@ select.md-in { padding-right: 32px !important; }
 @media (min-width: 1050px) { .mdc-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 .mdc { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 14px 16px; box-shadow: var(--shadow); min-width: 0; }
 .mdc[hidden] { display: none; }
-.mdc.changed { border-color: #C9DDD4; }
-.mdc.editing { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(94,140,122,.15); }
+.mdc.changed { border-color: #D9D5C9; }
+.mdc.editing { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(18,47,76,.15); }
 .mdc.new { border-style: dashed; }
 .mdc-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
 .mdc-id { font-size: 12px; font-weight: 700; color: var(--muted); background: var(--grey-soft); border-radius: 8px; padding: 3px 8px; flex: 0 0 auto; margin-top: 1px; }
@@ -1056,7 +1059,7 @@ select.md-in { padding-right: 32px !important; }
 .mdc-field.dirty .md-in { border-color: var(--accent) !important; }
 .mdc-ro { min-height: 40px; display: flex; align-items: center; padding: 0 10px; border-radius: 10px; background: var(--grey-soft); color: var(--muted); font-size: 14px; }
 /* ---- Master Data: Service Token as a QR icon */
-.md-qr-btn { width: 36px; height: 36px; border-radius: 10px; border: 1px solid #C9DDD4; background: var(--accent-soft); color: var(--accent-dark);
+.md-qr-btn { width: 36px; height: 36px; border-radius: 10px; border: 1px solid #D9D5C9; background: var(--accent-soft); color: var(--accent-dark);
              display: inline-grid; place-items: center; padding: 0; cursor: pointer; vertical-align: middle; }
 .md-qr-btn .ms { font-size: 22px; }
 td.md-qr-cell { text-align: center; }
@@ -1066,7 +1069,7 @@ td.md-qr-cell { text-align: center; }
 .md-token { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: clamp(10px, 3vw, 12.5px); background: var(--grey-soft); padding: 6px 8px;
             border-radius: 8px; white-space: nowrap; min-width: 0; overflow: hidden; text-overflow: clip; user-select: all; -webkit-user-select: all; }
 .md-token-row .kv-icon-btn { flex: 0 0 auto; }
-.mdc-btn.qr { color: var(--accent-dark); border-color: #C9DDD4; background: var(--accent-soft); }
+.mdc-btn.qr { color: var(--accent-dark); border-color: #D9D5C9; background: var(--accent-soft); }
 .page-head .md-viewseg[hidden] { display: none; }
 /* ---- Master Data cards: chip next to the title (Opening Hours), User ID + user name (Trainer Profile) */
 .mdc-headchip { display: inline-block; margin-left: 8px; vertical-align: 2px; }
@@ -1075,17 +1078,36 @@ td.md-qr-cell { text-align: center; }
 .mdc-chipnote { font-size: 14px; font-weight: 600; color: var(--ink); }
 /* "Take a photo of the QR code" button removed – Upload photo (bottom bar) is used instead */
 #sc-photo-btn { display: none !important; }
+/* ================= v3.5 – Keryx Pilates brand (logo, fonts, colours) =================
+   Palette: Pure White #FFFFFF · Soft Warm Beige #D9D5C9 · Regimental Blue #122F4C
+   Fonts: Cormorant Garamond only for "Keryx Pilates" under "Welcome to"; Plus Jakarta Sans for everything else. */
+.brand-logo { display: block; height: 44px; width: auto; }
+@media (max-width: 420px) { .brand-logo { height: 38px; } }
+.hero-title { font-family: var(--serif); font-weight: 600; color: var(--ink); letter-spacing: .5px; }
+.eyebrow { color: var(--muted); }
+.title, h1, h2, h3, strong { color: var(--ink); }
+.menu-card:hover { border-color: var(--beige); }
+.topbar { border-bottom-color: var(--beige); }
+.badge-admin { background: var(--ink); color: #fff; }
+.btn.info { background: var(--accent-soft); color: var(--ink); border-color: var(--beige); }
+.btn.info:hover { background: var(--beige); }
+@media (max-width: 480px) {
+  .cal-jump { gap: 4px; }
+  .cal-jump select, .cal-jump #cv-month { padding: 0 22px 0 8px; font-size: 13px; letter-spacing: -0.01em; background-position: right 6px center; }
+  .cal-jump #cv-year { flex: 0 0 72px; }
+  #cv-today { padding: 0 8px; }
+}
 </style>
 
 </head>
 <body>
-<div id="app" data-version="3.4" data-otp="300" data-pinlen="6" data-action="" data-qr="" data-scan="">
+<div id="app" data-version="3.5" data-otp="300" data-pinlen="6" data-action="" data-qr="" data-scan="">
 
   <!-- ===================== HEADER ===================== -->
   <header class="topbar">
     <div class="brand">
-      <span class="brand-mark" aria-hidden="true">K</span>
-      <span class="brand-name">Keryx Pilates</span>
+      <img class="brand-logo" alt="Keryx Pilates Studio" width="132" height="44"
+           src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAX8AAACACAMAAADUKZktAAAASFBMVEUSLk4RMEwRMEwRME0CeXoOGjwAAP8AfwAA/wAAAAARLksSMVAAVVURLksAPT0AAH4RLksRLUsRLksRLksOK0wRLksSM0wAAFWuVSfQAAAAGHRSTlMhW6HRAgcBAgEA/P0DzgQCjjBurxFQEwOqeSyLAAAf1ElEQVR42u1di5ajOq41JKkZwMZv+P8/HUm2wTaGJFXVZ071qty7zlQnJCHbsp5bMhu+9JD4GH4fn36wz8HOZ74Wz3B45hfNfwL/dU4CL53T+HAuPcPn383wJ/GXM0m91L5TVoz7Q1hluiXuhF9U/wz+BOyijR2nCSBXnfG+67w3Bhdjgid7o2e8cP0F9rvxl4j+4i3CbI129esL65SAF2FZlrRWv4/vwh+dHNeh4AvD5mSD55njA/43CrwL66P07wp8J/4IJVMo3J0OKp43fSJaAmPpQtgg/NcYfwf+KPsMRb/v8OorF0fSi1qhgTDudw98B/6AIWqVcZzMcH9BpOESNk4iqqHfFfga/oCfRvT7RU3i8dJHztJMowvvgj3wq4S+gL8cHCqTHi4DofYvirOYFPy3E2itf7fA5/EHr8aAMQXFM4CHIyb7CpZ80NOk8YMXNNmW/W6BT+LPB9cDgr1GBOcBtcoLUPIBNJUMqqvDqMzMw/wL9Nv4A4QezW43RPjcOHWvILmgpabr5mGx0zjd9LB+Mrv67IK/F/8VND9gB/BHFEiu5yr53LC+YZ9s1ruDDwHD8Vn0+ZOwhP+l+AP8ApATepN4jha4Cz94Q76xABytbwYLbiK0x+9uAfS8rmwHvO7Y8tP3wAn+j0GD7E/WFbBZsMDrkHI/jmmwDJCDkEfru2b7QU/hk/ib6C/9OFo/3E9lv7tNol/+Rvl/DB7h74v9PYMoo2bpJmGtFZh+xitKPU1aai0Vkqad5IbHO+i7fsSYD3ZOQ8BXSeijarvpvw9/0uHj8ac7sqwzupX4gEtGZlQXdsF+TWWl56DKbvpVNwjRV/T5I0Xda8s1sOl1sfxt+G/wrw3PEjHURoXyyzR6Zfpbryvr+1G9b7mhqOpXVZAzCX38Cne8QNvt9Redsh+Ef4TfHja+RKPgB7dqIWLxC0OzYegnpUz4JFlZ32QUcAHG1/xQmaGPX+FrfHVfvC7+Lvmf0WXEX7U2FG+wwJCMtr0N+tkvVA+byOdfg/U9iLlD00Eq6AVvhUM5LQOY1jNLeIMU9GrMFqC1QX4u/jzAP6UYqnzNb9pFITTTTSmQbKXG4JquqKFazuwiyFyIV6Hqpmv5dnbKN8j61+C/BndxFM0FSNYV8vyLdsoygzk2rb2IxtqNjbdxhH+0tACvqGooqJEKTAZgAYm3uZWF15d9B0z678FfIoIoUktzAcgCbzIsDBkKPSjwRxF+gm1ph3J+sMGqzC+FvnoXbzAbZqpyrzPcyJWB/qn4r6wPrs/QXIA1y0KvAxYajeuR/aOFbsW+u/SDEcX/GZu7qqVgMg3PYAHV4370EZILwP8W/INYTYKtHIX2CNYHWeD/0J8sJihgKbiDRD/H2HesrW+S/plefVlbP0SO/2C78mN3/I9u8s/Fn+wrPNBNkc0dQDHwEq4lBFChzGxQAtDnDesb1pFcyOjXjssrGRtW4V8JOU/6B+C//y3+50dU/gH0tb0DUnw7D1gbGM1AigfwmT+yzPNB+kPWQAQTwL+Mv1zD66+qsx+BPw8mUkRne8Wwtf6BmQV2vbIjuIq208sN8Ckyz5v036YtgILCfNRA/Iv4r0GXbfnYC57wZZmAVwnsU/5qfeHVC+swnAlFSJTl7B2Wv4+87j1+au0Aym9uAAqxcqnQtWdw9SH2LaR/0xqowOTX8J8HevmJ9IfXHstyQkrFHOuBX+nc6YXylRfkGj6j9QvhuWVxa162yPCX5FPnELaNsI2piXnWVGcHP9S7KJOFK84r+JNb08hQvId/9D6PmYmaLwnZwR4yJWoZjmwwyrFO1peZjZ4imfWQDhyFedSYzpSl7c2jqlr0461vpdshcrdw2zdrXEP+k0nLa7zHHQA7tEOY4xs0rP+c/mlL6xukv8iOJaP9PBN3hX90fi7hR8nsiBRMO65HUqrkJagdZXFtCOgxpypCXlfl+gM/yNDn3NggD8tCL2xplcjWwQc7/ERUv+lhDvhjcm08yOa99IJkpJfgExCq4Z12eu4tseIq68uP8GPLgJheSpld4B8TVLCxHhfEDawf0CqFFQBesN41hYz0mJjAlni3jy2rFxkH8YMeVGiIgaAs1m9MKfDQABHz5jEqZPV2+dhjGljjdS3xj8a31s0y3wHwj15Y01Ma4QHi30ESYtQaJcCF2FdeSP+WXXrBBJ/jP4eK5pX0A5gqoj9aSJWHTCEW02L5FGR9z6GiyIUM7R5yR9pS3BRbJirXYf62v2CDE7x0WVZkqpAMAGdZxTXHn0ff5KCaszhA4k0GcfJU2B2FvztvFsjXm8C64oXnMzYwYuKlRNwp/gn+i6y/3GU7VCZY0KyYqgqYlBlsdNp08QS9kQyIrVLh6QdmyxIU6lysyHjws3meU0xB1o7/Pa7O0sj6xwW470mvyS7OT1aR8cJ6MJuUz2PftvS/qLuv8I/wj5fFtG7agjNIFeKFMVrG33GXd1WBbYaQG8nqDphGR/ZMeWGQ8w/SCcULIHkkm8WT5SZ34vCWHf+29i8XwGUbKOQyHZNhn2KJMdfqDc9nyOhB+Ob1U/LPCdtr+Nd+2vRF2ORy3m6dfqH3qpJUpClBW4kR2QJApckbm1catvBm8abcGKCQHXxquSlyYeZZRnd79WPDPzo/DaudLUBXfDg88d+4sg941yx2mV4v4E/f9CRyOpN/E+s4p8t336Vk11HroDNhl9XnA0sVM1kEhZoyAaUbKRYgM6p+nIocbby9tgb6DzgrtMHquh5LVjbURzhrK1RaAFtuoI7HPKjXw4eE+0moyDPdH3L3LOaN5Lv4ywAPws/P4c8S00vr8/B3z25fkKTwF+jshBxKuo6kl0Nqy7cMAL5gKgPAkYmTX53lGsn4TsaXCmjDP2nlbmh3rcigIMuHTe4Y/DFjbGFDtL8S/G37iB8eXNBRv6t/eKh65ZywhuO5A1B6uTv+ImjN4geBOAxrYSWTKpYy3ymZGyyXfAPE7ezKVUn6imJT9FFUXdeL8j7HL7EYycr1tQUgYVgYGOIHrL5T4NSwK+UjiTvRj69kzo7434lHBA9z5TvxTIPbXEtlz+N98xwK8sfitVHfbJtH5m5jedPiiD8Ioig1EF1/n7FOODie11Vvm/8jYzprnFKcwhsl3LFaAJQQ2DjUlIcfowR6e/OZ8sGm1IcPvavj01LkAX++uYjknQ/n5N+n+PdwcxX+m0FJcG+eSHFh0BlX+GOF6uADBeOLnHy2m/dRbfinfIrpKKdssc+rUkO81Gy0fiL4zVOIbYitC5mWpSn9JPoYSUJr3mKfJyGO8r+btumi5vIK/vYC1gTFZjvexB/CUnP0gVxa0Hh7iD7L4t/4a9GR76mJl/Y4P43ewtKyDsDu4PYEemliFLjJugb8K7E1KSFAa2um8VkWrsRfWlO4b+fvfQV/3K2l/O/+1BwD9O0L3sW/sizoA4U1pbxajDOEScRhFnPKUVlh4iQAFdSQ3PV/rf1pPyn0SjF+gZSrEZioGg/wc2K03TbdFn2PawVUyb86LP7JDngJ/+UK/1ikGz4p/2CnWOUDReOLF3ygdPdsh5YV3s+cbOSUNoHk7fABfsUdPsEsM8o/pbYY+DxgIuFnuzoNTGxO61MOMtooduGC5vh7pg+bb9IffxJ/k4nzm/jn3IDoA6FemClDBGW7jh3z/zYGX2uS1wWJPXETUE1oFQf84U4wXICs8wIeHXpenlzE4uZpP03lftrMzYUHlOMP7BYYNzFOlcPI/xj+eRnvffyHtQCLMjPp9ZkqJXX9K6QE9i8lIfUq6Gu42dUlt5hwE/jxJiaQwOGb1EOi4z1hFpTbVB8Lot+PqR2+yGCOTwrBlf7pO86MmM6zK9+Lv8kTiW/jv7mTTWkpS5xszwnb2l8Jm0AQszZ6ZUR6Rl0uGLn/1KcBDHRwzm0/klFZLea+ObJH07gOLyt/Sien+w3/B1yLIoFLYdQf0j9u+Ir8VxooBJv3rMZZ4j9v/shcOy0u+Ou9Ds4nZDwp+UUXj4bCmODZzlwtC902FQyIk8+6sHyNeCKyey7ouEf8YezHXOzrpvr6DvwLRtdn8AeXp9yr5xQxFohs7d8zk+0UWyuEwArOpMC+g63A1mrnHNpz0O2LB6VCeHLaEmnl/KOs++VBzlUSupX/4VXSprV83yL/bvia/GOsXunK+YJ/EtyRqeWO8DR3JmT/iEWuQUKgwRfx9xo3hA18IBvwDz+BRL9n7Q7FZIDVe/jnrM8Dvt+IfyGtn8L/4AMtV/yfWJes21Z2W3wX0UAQ4xCFFywt6P/B3EZP9hcWCeQ/LjNGIFjydg3RH0ru3P3N/HNRxGiZ4G/Av+QwfQ5/INKK6bm3hvin0stpH1WyD+OCm2rqlvHmsQCnMSwy6MvAf7XCINvdYw4kVPj5KZspOEDi3fx/mQUBE3z/bvxhifXwHfgfojB+gv/8BIx7THzBdwtSNgtzAzqkChMJDHU5WgLFGIyEC7/jThwhd9G2zp4xx0/rX3a6tGtn+MuX8W/Xi97Fv6GB5Bn+G5G2jf89fs/ip5S2l/gmhf9h2K6locaqmR59rG+TmF72GkWYzq85wX8tTPCBY3CGP39D/gf5LfhDbNrKRB/x59fGcI3fP1mJkRQixslnMsaRy0MGC344hNnQFplmRYjr/P5ybvKv64+8NsH8Of54id7qWhNZwz8u/w0faH2CP2+qCkP5ZXg/JHGAVndP+GiIjNnIJPaWQgTGzKCUj1VF/Mx+uB4RdE0DOuWfFGWn4ycc8JdEYBORiTXRrNJ/BP/aW2v7QCyp1La8oiahuZ7wdtZltFIt7sA7YQJJEdgND/kZKEB6EXwoyqheDKtZP49/mQlM1LMz/NEDYCpCL5TxMKx3Oe6jP4I/+EC3pz4Q24Khrv39Tnu9wCqIPHqWiD/wipXFrBuutTY9DnnYLKobr4eepDV/G38QaHFhggv8seQWElCAvT93K/8U/i/4QIh/kMXOQRK/9YDOLaA1qoEVGSaB8dDIwNO0el5gHjEmKPXeJwRe0dkH4sM+yYCe488LvYom+Az/Hos+oaCnI/di84j/CfwPGsgN5/g/eZRQgQMJ+2FVSFwyqJaAF0qUIG+Tn6je/tBX+beVD1pGwYX8+9uWP6w7AP4o/s3aQdsH2vGfrh5VCgPZJpjF1I8Rs6ZAfegNzCSAUWOxT5dW/vIDP48/9siebuvSOmPutT2z9M/hv4f8a52HbmigXf8off7w1VsD/h2mImDeMzPmsdyUwQVWJhISDfZlnz+e9a8sF/z/2gQ/TvAHv4GdReGfxp9f4x+KrQEs/hBHzuG5/r92F6sQBfFXZpnETTHUP1CsFBZTFLE3BqcEvWJ/56c8Brrpsv9FulMTnPUNU2+s5C/A+jr+gg1X+PNIcKJtQmIy+es8UOZ/rm5tPx7r0sTfMj2RYbs7yEBbT5UvSxci/nad19NPfOZ/uvyeWYX/WnG5syg41//iYlbyy/jPNVGIn+EvU8EkVtKRsgA3ry99oNz/v6wG+qrAA0tsISMRmEIaRzQMxEvvKKmJ+ueS4XmNf6Y5J+LWV/13BxO8baOi8KGH78DfnKURDvJPBcNtZAuZQMdrH+j+Xv4hfVVZQnCwtxdcWy091QElVFyQAARJOk3TQtVlZ3RQIKcUrKy9Hb4YBKvC/8jx2IjOOVuwv2qReRF/eSC0sTb+jKmN2wc+2R3fB0LNKmVZwfw8/xZ/VcGnnbGVh0GKc7wRSwWq756mcEAG1IbmMHs5l+o6/yY/kvmdAslU36y7gG/rB+D3Ayv5Hfz501EIxHpNnBxRzMDx2cwugRlKZJ04WTMHd1nhZf7ZDsOVDkQ3G8J5eHA3d4pmqy60L7DJWau7FHgMCdwHzYeQ4qLo9iT/LFO5n8YmulCTrVVVKVWQB5mx0WWeCwcIMp1nndBDOUFoPh0lWlGfQmVjxS+zFf65nxN4FF2whYWsRKHgu/4J7Ddx1czpS8tv6Iax5BICSwZ8Oj2C+oOiJC4L1YDPte/1V8440CwxbZcwRtfUpOdaqsLteQhHih97WzJcc19ozQesgFJw2MzbnciDLRcgsGnmogHDl4lxjwoyeTuy4I5PUyzwUFDOiHJ9XaMkwghaWg+pIM28UUA1BC9XAPfZa806IKjhQCxgIAIrSCtD5ZmLuYR823KyNfvS5X1OvZ+fT6jBCxV2D926KgIbfZzoRK5QihQkO/L0Z9pk8txaFWGdMWWvUVdFHjQhbUkcz3IHjUAEdJ0gj4ftlPcLb+FD4tWk4mL4qlzgRYSGZbx9EL1udDgQUVGr2AW9dj5n4PKysWeMPEh+kMzHgRI6IfpJne7P9inxJnW3f6OvyHxGTVN/2hLi6o69qe6164bSJZsKFpev3o2E5TC4lO3B0EVHFupAgT0uyoa5k9DXPyk6+Atmsfrwq0EFjsDKUqoj++qvPu48/HJla2iYMmfWavxJ3S8aFPOMnsCctFcmrQqPyIK/4rSBWduqmWGawiSjE/FLibzzTFY31P2luwLQ3aF1YhI+4189pWPKMPfKIeEhEbH6uKluOPmNQ0ClH3qE4ShKEcP8ssNXJvezdvtmM05TA1rhK/u4+LI3NGzCLfd3lNbEO6ZvqS4gnX45oZomvpa3NlX6Z55Fs/1Ulhs6ispj2PqvL7Vx1lWIDioo/3DSmkUWKOXVkSBK4dbsAX8YdmGdfIhrdr+rCKfZXMMeJxtPxz2gXI1P3pkOSfC8OmFae8hlg5J12T46dY8nA8IDkxiS7OOugkv/31WKL0s1uK60Scpl/s9OQGFXJ2HQ6FU/3qDQ0vkOIl8LawFH34UR5A4nwXk3GhzMyo6DgJpDCM48XignqIruPB6G2NNkhmnapbfI/7K+6KWeqK+Ny/pUm3rrXK4AD8f/eXSzrepc4X92+HqeKcrqEjgfT+3fFrq0cv7z/JyPjxsA06DBeeqAA6c0VJRVH+4dbsWBEzp6XGq48FL8TwinkXUa72GPJgsNU404UcHsrsNdVoujbbSSqddnrpcvzNUot86zwZjFz6jzDzKbVlCW23kaeXBQdCxriX7SkQjqBbW6m3GmFQRk8C8aBkcpDhBmY5CTS4dPucseRfnM4Ese0rhjtQDmwA1BQW9JL53X53H2z9gkAJNQzjS9tHvvEIcVz/wLd9jIPxuxDZip6z1hvc1cElzYi3x8SuehSadtdvMg4cwS9RkyDz0Rci08CeEXLcDw7ISSZwFH4C2ofJ6I8Lw5Kr2NX2iiXZxeznh4NCII8Lh/8gSH5WhsP8DJBfVk1VGVoESY/nCzLLeHVwP6+WpjmoWNNtLfVCAeWjrggoFBxs+f0d5fqZ9d/T+Ru3kfVBLktD1RjV9r7Ms7+fwJJkVedGOb8YuTafgJ/39noPurMoRJI3fcCAEWyP8sgX61WOzNwo2hk4Ukf9Y/Tf0+HYGyHYBF3gv7HFJPjvD59GHFvIhAsg0P81ZWeVJ34HN7/mHyQM+llrRPzJBCMQB9LYVxm8NZ5SHUMBugyLyL/Wbntd3XxgZLclRogNu/asjtXOX/Pn0GASuGwrhLmXUbufMGHo4B3QCMT+TkwuwKh/mfeWPeXRjXyIp5bQwoKSGvh///lM87L2yTs8+YJe/gv6sEfh7/mnz4E04hQ/TRvesC598WvIvTtdy/67W5wfJfc8qUjMcdY/x2e7G/6FX8r2WyBFSG4XXmQRU2YpwABSvT5zIcVXWVuHxtEv0wDP8S9HWf8edYmT4KRLsvzr9NOlk+OdMuvAnqARashackK8PuL7AFZYLNXns/P2pw8J0Evofz7r2n2LxOtMkv4p9CAHMys6ri87vpBjksT0YI61Pem0Kf0BvOwunXre+/6pEGe9a5qXou6Ofk/yMO5mRn6sfms8w8FXioAYa65sWhl+usASCVvtQPHNq/GNFIzfbLV47gY4e5hLxdAMrQlIQ9rgE0q2HKwQhfDd0IK3aae/iJZ1bgwFS3zy9KmT3ztRMQWVlkAzLfvTW3uKyOQYJXQAC8QqQF400hDl5cVT0jffZoKVL2Y8U/0tt2lgnNMhq+af58sgC+1cjRVckaOfSiR8UPxS8QfEgCVZb7sGSHKbs/8xHygiK2c3Tuy84ZO0z/b58IZit7AOlOC0wU7DwC/f8QokGg9Y3ze9j0w49sCSxDaKRZviUwYTXnr4ENJzJbQX8Gnokf0WYseEYsvPNobFsG+B7XeP7RZ4Zsc1z4t55/scbTEVyds1qJzVCMkfdWQ90X6i0wg9Uty+2gUDi1BfM270T/9GOT+czl958/cg8muDGCuyYTYk0Z82+CSiDQGdkdoW4wUAIR6Yca3+EfOP+lLZ5H/D9mpZRbRoIdKoXH7u4W/ul0q+WrsiPpkf+j+OOQg5dSllftF65HQZZcVu/LPj79U7bvgQo//PPnT0WAjvjXtF1w72Hangy5CXH0Zxr6J4Ve7LvEX/6LbEF5U+snz18LHTM1bzvY33koGyAUZjypHiP8MZySR/zX79I+Grq9tWdu+wfTWCrr4Dx0nQnCouNAF+AswEuePAVHf3rG4oWQzxlcKT3g3MRTeDS+kcHF9EbswwK2Jfy/o2o4fEw8J4MzuAUf+Vvh6c+ev6nj8Qr8QH+u3HtAV4R10oo1XH1W+59R+1j5ubwb39mz2mCnZReO1WFAuOiRvqMhJ5slKcE5E+m8FAEWCnrDRzo0BDKD3kcmItCNOqgg5QmcBU41AHYf6mAJb4Sd78m51h7fyGDcqcKZUh4jf696Op8enx07T4pIWd8JlXXjSf4G/sEEVNM6qJlODgf8wQRzCVNAvWvgXzMQ53gE8LdEXpRs7aKDK8Y5PcvKDRhxRVI8dkKEXeqp003RXFQj6LSG/e6hzDrSNYj/Qid/wmAjEWfLU301sWDGcGH8kaMIX6rwS5bXD0VkTbY7eOj8cOxvdZSPR/0DweDgF33QP6Trl8a5tvqTiDPV98smUwCtwwM48MhnDtaHp2ezgbE6BSAP6zjMCOEL9nDMkDNXrjPMhh2pw/qs2c/Hpyzu3QUMIQ7VXAR2VNGfDxh05zjZbXA6+AMW3wU2O54Ng2IJtXG2jQLDs6J789b5y1FNlPreHfpPGfw4CxwvjwcQ+nFusAPEcX76S0ffnSRgpy3FKumbiX0R5H9JUQrLBRn6oWQgL8cZLUoHWVJIVVIxGgf+JOj3ez60BEYVOJR/rYLQfxC/OxW4d/lfaOga/SRH8j+TWZwRwqh78aCSy6MmWLPZ6FAJsHUAzGjylVpoGL8SLRWRv0MyO32p6IJl5nwkvOnULY6wLvDnOAgnoq6CJ+0WTvjfnQv4W/yX5kEZ5YdxJbZsfMo5TqDTG0/w7wO6AX8eZGJOohG1+VVnHTs73Du3niTNS6V/cPj2hKYJSr/HbyjVvxy+Bj+9fytZUjzifbqhAn/47ZFSppAjGafO7kP1SP4d6ARDx/Jw4NTife3aGmQfn+rjMY4m/YzX5F8l+Y8HRrFxGt+U/8YCyOzY5Uz/h1GZQIoe/SHSMnn6WQad9pWSI4xyuSXbsUrSP/E7ZcT/IVHrrjN16gEEHbooTm74y3nDH7SmI/1PY131bcxKS/SUu433MKt2Y9UQ/utDJvwlDixk1JhOA+aFDD6GwgOX7GbSDR2wN7yFP7SP2nDEFsvkLy9wRfwdygD2eh3cnyUnoH8D/AC6zsoJPeC/iawd70nlLTiYiK5D3U1qeIgnUkUl819yhcB4W2xRVFQ9NeNHbmiooJosmklzAdCjwCTwoobM/9HJ0wn+DySCR/qXzaOQ4U38w7ljZatkV5xsHfBn5Prh/c+NgkGyhZLa6abPU5QO8a5DdkUKoBbkGuHaOIg4jAZqAg4+BjIkRE44g8LRNeD/01/hT3hJhLn84OzD+/LhNqaHp3TsN4Y/gOedFB1oFZjETsy+D4cVceaxCkKEefi9LhhcpWFk7fKx37N8H/+PIYnsdqCayMkpAX/gnxD7QYlK/dwfYgvYVtJm02c9n1a2AVqclEoMa/hHT4UQ+gP6jDq0oXgFhFH4X1Q5KvyF941PwlV42Qe4zgu9I9/YDp/y2TepjUvpba+COH/AJ/TGmHh8EQRsfXwPMALLZk35GfmPPSRbdZPmkHXbgZcJf8j/oxatzC+5sCycEj9jQ9f1mUX/gprKN+Z/vnL+e9XxcgvUwnnzSrMaoxs76WKcKOrkkJ6S9ufxU9y3ws+zQVZy+wf9wUPgSH/TS+kNKaBcsRVVxoOuaS77gTzFZaLlyuyNIe2fvhdfWWX+r/Q3fu834B/7cFFy18TpzFuawOdhs27hT36pi9W5LjrYvxn/d/GP5G867SnGElkk4fD4NZy/AZ25hf6REpynEIjCmVVq2g8d/X28h39IX0zEMPrgpNV3p9JRZ3NHh/RBFmsuZjeQq8njgayK/SSm4b8KfyJ/i0gyWrGkgpy3NeCvwtkWwIDBlBUbdm8nxIDD0sdmv1/p/yz+2D6CDenUOA6myE7JlC5wKg60lNPB3mM/6nQO7ULwu9hJfWib/n28h3/sMUyCjA2Wglrmwf9JM2JA+i1FiXPkpeOfuG0Ednn/Cv/X8N9XAA0uRQU08BP8H0NEbIAfQkrR+zimwmNboYjHh/0K/9fxD5Qv6pXFMT94+BHkDcH/h0l/qGMWJTorsCEgnMRJndMWi3S/6H8L/nEP0Gg/qLBiW/SC1CtIfEI2RVhITfc31cc5VD6NnP31er4P/3gqHi2BVUB3C8e/WPSPwL83kGwWdmawD5ymFIn8lf3vxT/2yj40zdJ3D8Qf8nwOAjFIQXrnhXOY/16G5rzf38eX8d/alWEk/TJDP3qY0UxTJbJJanL+Ff0/hT81YQbZBmFfOmxH6+L/0//pX0T/MP7Dr3L/v+O/q6P68av333z8D6abiQCL0FI7AAAAAElFTkSuQmCC">
     </div>
     <div class="who" id="who" hidden>
       <span class="who-name" id="who-name"></span>
@@ -1327,7 +1349,7 @@ td.md-qr-cell { text-align: center; }
 <script>
 /* ===== GitHub Pages version: connection to the Apps Script back end =====
    Paste the web app's /exec link below (Apps Script → Deploy → Manage deployments → Web app URL). */
-var KP_API_URL = 'https://script.google.com/macros/s/AKfycbw1t46SLv7l99Onbl8K_Q2c8USUiFPqxaGfXJyjAiTFWiarPvqp1JKild6R5Pv2VIBM/exec';
+var KP_API_URL = 'https://script.google.com/macros/s/AKfycbxZqnmFgsB3IaHqwAbJlovsCH1zXitzfKBCqJuauKg/exec';
 window.KP_STANDALONE = true;
 (function () {
   // deep links work here too: ?action=complete&t=… (Booking QR) / ?action=class&c=… (Class QR)
@@ -2639,7 +2661,7 @@ window.KP_STANDALONE = true;
   /** Draws the notification (without buttons) on a canvas → { dataUrl, blob, name }. */
   function drawPinPicture(bk) {
     var S = 2, W = 360, pad = 24;                        // logical size; drawn at 2× for a sharp picture
-    var font = function (w, px) { return w + ' ' + px + 'px "DM Sans", -apple-system, "Segoe UI", Roboto, "Noto Sans Thai", sans-serif'; };
+    var font = function (w, px) { return w + ' ' + px + 'px "Plus Jakarta Sans", -apple-system, "Segoe UI", Roboto, "Noto Sans Thai", sans-serif'; };
     var c = document.createElement('canvas'), g = c.getContext('2d');
     // measure text wrapping first so the height fits the content
     g.font = font(400, 13.5);
@@ -2668,18 +2690,18 @@ window.KP_STANDALONE = true;
       if (fill) { g.fillStyle = fill; g.fill(); } if (stroke) { g.strokeStyle = stroke; g.lineWidth = 1; g.stroke(); }
     };
     g.fillStyle = '#F5F1EB'; g.fillRect(0, 0, W, H);
-    round(8, 8, W - 16, H - 16, 18, '#FFFFFF', '#E6DFD5');
+    round(8, 8, W - 16, H - 16, 18, '#FFFFFF', '#D9D5C9');
     var y = 26 + 8;
     g.textBaseline = 'top';
-    g.fillStyle = '#5E8C7A'; g.font = font(700, 12); g.fillText('KERYX PILATES', pad, y); y += 20;
+    g.fillStyle = '#122F4C'; g.font = font(700, 12); g.fillText('KERYX PILATES STUDIO', pad, y); y += 20;
     // title: largest size (max 20px) that fits on one line with the same space left and right
     var TITLE = 'The booking has been confirmed', tSize = 20;
     g.font = font(700, tSize);
     while (tSize > 14 && g.measureText(TITLE).width > W - pad * 2 - 4) { tSize -= 0.5; g.font = font(700, tSize); }
-    g.fillStyle = '#2D2A26'; g.fillText(TITLE, pad, y + (20 - tSize) / 2); y += 40;
+    g.fillStyle = '#122F4C'; g.fillText(TITLE, pad, y + (20 - tSize) / 2); y += 40;
     rows.forEach(function (r, i) {
-      g.fillStyle = '#7A736A'; g.font = font(400, 15); g.fillText(r[0], pad, y);
-      g.fillStyle = '#2D2A26'; g.font = font(600, 15);
+      g.fillStyle = '#66717D'; g.font = font(400, 15); g.fillText(r[0], pad, y);
+      g.fillStyle = '#122F4C'; g.font = font(600, 15);
       rowLines[i].forEach(function (l, j) { g.fillText(l, pad + 90, y + j * 21); });
       y += rowLines[i].length * 21 + 8;
     });
@@ -2701,19 +2723,19 @@ window.KP_STANDALONE = true;
     var mid = ((labelY + L.down) + (subY - C.up)) / 2;      // halfway between label bottom and "for cancellation" top
     var digitY = mid - (D.down - D.up) / 2;
     g.fillStyle = '#8A5300'; g.font = font(700, 12); g.fillText('BOOKING PIN', cx, labelY);
-    g.fillStyle = '#2D2A26'; g.font = font(800, pSize);
+    g.fillStyle = '#122F4C'; g.font = font(800, pSize);
     var digits = bk.pin.split(''), x0 = cx - gap * (digits.length - 1) / 2;
     digits.forEach(function (d, i) { g.fillText(d, x0 + i * gap, digitY); });
     g.fillStyle = '#6B4A12'; g.font = font(400, 12.5); g.fillText('for cancellation', cx, subY);
     // QR (white card on the right)
     if (qr) {
       var qx0 = W - pad - boxW;
-      round(qx0, y, boxW, BOX_H, 14, '#FFFFFF', '#E6DFD5');
+      round(qx0, y, boxW, BOX_H, 14, '#FFFFFF', '#D9D5C9');
       var n = qr.getModuleCount(), cell = Math.max(1, Math.floor(QR_SIZE / (n + 2))), size = cell * (n + 2);
       var qx = Math.round(qx0 + (boxW - size) / 2), qy = Math.round(y + 6 + (QR_SIZE - size) / 2);
       g.fillStyle = '#000000';
       for (var r = 0; r < n; r++) for (var cc = 0; cc < n; cc++) if (qr.isDark(r, cc)) g.fillRect(qx + (cc + 1) * cell, qy + (r + 1) * cell, cell, cell);
-      g.fillStyle = '#7A736A'; g.font = font(600, 11.5); g.fillText('Scan at the studio', qx0 + boxW / 2, y + BOX_H - 18);
+      g.fillStyle = '#66717D'; g.font = font(600, 11.5); g.fillText('Scan at the studio', qx0 + boxW / 2, y + BOX_H - 18);
     }
     y += BOX_H + 12;
     // note under both
@@ -3390,9 +3412,9 @@ window.KP_STANDALONE = true;
       var c = document.createElement('canvas'); c.width = W; c.height = Hh;
       var g = c.getContext('2d');
       g.fillStyle = '#fff'; g.fillRect(0, 0, W, Hh);
-      g.fillStyle = '#2D2A26'; g.textAlign = 'center';
-      g.font = '700 40px "DM Sans", sans-serif'; g.fillText('Keryx Pilates – Class QR', W / 2, 64);
-      g.font = '600 32px "DM Sans", sans-serif'; g.fillText(r.service.idName, W / 2, 112);
+      g.fillStyle = '#122F4C'; g.textAlign = 'center';
+      g.font = '700 40px "Plus Jakarta Sans", sans-serif'; g.fillText('Keryx Pilates – Class QR', W / 2, 64);
+      g.font = '600 32px "Plus Jakarta Sans", sans-serif'; g.fillText(r.service.idName, W / 2, 112);
       for (var y = 0; y < n; y++) for (var x = 0; x < n; x++) if (q.isDark(y, x)) g.fillRect(60 + x * cell, 150 + y * cell, cell, cell);
       var name = 'Class-QR-' + r.service.id + '.png';
       c.toBlob(function (blob) {
@@ -3567,7 +3589,7 @@ window.KP_STANDALONE = true;
   }
 
   /** Two colours only, so the legend stays short however many trainers there are. */
-  var COLOR_NO_TRAINER = '#C47A5A', COLOR_WITH_TRAINER = '#5E8C7A';
+  var COLOR_NO_TRAINER = '#8C7D62', COLOR_WITH_TRAINER = '#122F4C';   // brand: warm beige-brown · Regimental Blue
   function colorFor(trainer) {
     return (!trainer || trainer === NO_TRAINER) ? COLOR_NO_TRAINER : COLOR_WITH_TRAINER;
   }
